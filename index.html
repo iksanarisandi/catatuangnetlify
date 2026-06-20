@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>CatatUang</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              yellow: '#FDE047',
+              pink: '#FB7185',
+              cyan: '#67E8F9',
+              lime: '#BEF264',
+              cream: '#FFF9E6',
+            },
+          },
+          fontFamily: {
+            sans: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+          },
+          borderWidth: {
+            3: '3px',
+        },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="nb-bg min-h-screen flex justify-center items-center p-0 md:p-6 font-sans">
+
+  <div class="w-full h-[100dvh] md:h-auto md:max-h-[90vh] md:max-w-md bg-white border-3 border-black md:rounded-2xl md:shadow-[8px_8px_0_0_#000] overflow-hidden relative">
+
+    <!-- LOGIN -->
+    <div id="view-login" class="view active flex-col h-full">
+      <div class="bg-brand-yellow border-b-3 border-black pt-16 pb-10 px-6 text-black shrink-0">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="bg-white border-3 border-black p-3 rounded-xl nb-shadow">
+            <i class="fa-solid fa-wallet text-2xl"></i>
+          </div>
+          <h1 class="text-3xl font-extrabold tracking-tight uppercase">CatatUang</h1>
+        </div>
+        <p class="font-medium">Catat pemasukan & pengeluaran dengan mudah</p>
+      </div>
+
+      <div class="flex-1 p-6 flex flex-col justify-center">
+        <h2 class="text-2xl font-extrabold text-black mb-6 uppercase">Masuk</h2>
+        <form id="login-form" class="space-y-4">
+          <div>
+            <label for="login-email" class="block text-sm font-bold text-black mb-1 uppercase">Email</label>
+            <input type="email" id="login-email" required autocomplete="email"
+              class="nb-input w-full rounded-lg py-3 px-4 font-medium">
+          </div>
+          <div>
+            <label for="login-password" class="block text-sm font-bold text-black mb-1 uppercase">Password</label>
+            <input type="password" id="login-password" required autocomplete="current-password"
+              class="nb-input w-full rounded-lg py-3 px-4 font-medium">
+          </div>
+          <p id="login-error" class="hidden text-sm text-black font-semibold bg-brand-pink border-3 border-black rounded-lg px-3 py-2 nb-shadow-sm"></p>
+          <button type="submit"
+            class="nb-btn w-full bg-brand-lime text-black font-extrabold py-3 rounded-lg uppercase">
+            Masuk
+          </button>
+        </form>
+        <p class="text-center text-sm text-black font-medium mt-6">
+          Belum punya akun?
+          <a href="#" id="go-register" class="font-extrabold underline decoration-2 underline-offset-2">Daftar</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- REGISTER -->
+    <div id="view-register" class="view flex-col h-full">
+      <div class="bg-brand-pink border-b-3 border-black pt-16 pb-10 px-6 text-black shrink-0">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="bg-white border-3 border-black p-3 rounded-xl nb-shadow">
+            <i class="fa-solid fa-user-plus text-2xl"></i>
+          </div>
+          <h1 class="text-3xl font-extrabold tracking-tight uppercase">Daftar</h1>
+        </div>
+        <p class="font-medium">Buat akun CatatUang baru</p>
+      </div>
+
+      <div class="flex-1 p-6 flex flex-col justify-center">
+        <form id="register-form" class="space-y-4">
+          <div>
+            <label for="register-email" class="block text-sm font-bold text-black mb-1 uppercase">Email</label>
+            <input type="email" id="register-email" required autocomplete="email"
+              class="nb-input w-full rounded-lg py-3 px-4 font-medium">
+          </div>
+          <div>
+            <label for="register-password" class="block text-sm font-bold text-black mb-1 uppercase">Password</label>
+            <input type="password" id="register-password" required minlength="6" autocomplete="new-password"
+              class="nb-input w-full rounded-lg py-3 px-4 font-medium">
+            <p class="text-xs text-black/70 mt-1 font-medium">Minimal 6 karakter</p>
+          </div>
+          <p id="register-error" class="hidden text-sm text-black font-semibold bg-brand-pink border-3 border-black rounded-lg px-3 py-2 nb-shadow-sm"></p>
+          <button type="submit"
+            class="nb-btn w-full bg-brand-lime text-black font-extrabold py-3 rounded-lg uppercase">
+            Daftar
+          </button>
+        </form>
+        <p class="text-center text-sm text-black font-medium mt-6">
+          Sudah punya akun?
+          <a href="#" id="go-login" class="font-extrabold underline decoration-2 underline-offset-2">Masuk</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div id="view-dashboard" class="view flex-col h-full">
+      <div class="bg-brand-yellow border-b-3 border-black pt-12 pb-6 px-6 text-black shrink-0">
+        <div class="flex justify-between items-start mb-4">
+          <div>
+            <h1 class="text-2xl font-extrabold tracking-tight uppercase">CatatUang</h1>
+            <p class="text-sm font-medium mt-0.5">Ringkasan keuangan Anda</p>
+          </div>
+          <button id="btn-logout" type="button"
+            class="nb-btn bg-white text-black px-3 py-2 rounded-lg text-sm font-extrabold uppercase">
+            <i class="fa-solid fa-right-from-bracket mr-1"></i> Keluar
+          </button>
+        </div>
+
+        <div class="bg-white border-3 border-black nb-shadow rounded-xl p-4 mb-3">
+          <p class="text-black/70 text-sm font-bold uppercase">Saldo Bulan Ini</p>
+          <p id="summary-balance" class="text-3xl font-extrabold mt-1">Rp0</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div class="bg-brand-lime border-3 border-black nb-shadow rounded-lg p-3">
+            <p class="text-black/70 text-xs font-bold uppercase">Pemasukan</p>
+            <p id="summary-income" class="text-lg font-extrabold text-black mt-0.5">Rp0</p>
+          </div>
+          <div class="bg-brand-pink border-3 border-black nb-shadow rounded-lg p-3">
+            <p class="text-black/70 text-xs font-bold uppercase">Pengeluaran</p>
+            <p id="summary-expense" class="text-lg font-extrabold text-black mt-0.5">Rp0</p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between mt-4">
+          <button id="btn-prev-month" type="button"
+            class="nb-btn bg-white w-9 h-9 flex items-center justify-center rounded-lg" aria-label="Bulan sebelumnya">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <p id="month-label" class="font-extrabold text-sm uppercase"></p>
+          <button id="btn-next-month" type="button"
+            class="nb-btn bg-white w-9 h-9 flex items-center justify-center rounded-lg" aria-label="Bulan berikutnya">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="flex-1 overflow-y-auto p-4 bg-brand-cream no-scrollbar relative pb-56">
+        <div id="empty-state" class="flex flex-col items-center justify-center py-12">
+          <div class="bg-brand-cyan w-20 h-20 rounded-xl flex items-center justify-center mb-4 border-3 border-black nb-shadow">
+            <i class="fa-solid fa-receipt text-3xl text-black"></i>
+          </div>
+          <h3 class="text-lg font-extrabold text-black uppercase">Belum ada transaksi</h3>
+          <p class="text-black/70 text-sm mt-1 text-center px-6 font-medium">Tambahkan pemasukan atau pengeluaran di bawah</p>
+        </div>
+        <div id="transaction-list"></div>
+      </div>
+
+      <div class="absolute bottom-0 left-0 right-0 p-4 bg-white border-t-3 border-black pt-4">
+        <form id="tx-form" class="space-y-3">
+          <div class="flex gap-2">
+            <button type="button" id="btn-income"
+              class="type-btn flex-1 py-2 rounded-lg text-sm font-extrabold text-black uppercase">
+              <i class="fa-solid fa-arrow-down mr-1"></i> Pemasukan
+            </button>
+            <button type="button" id="btn-expense"
+              class="type-btn flex-1 py-2 rounded-lg text-sm font-extrabold text-black uppercase active-expense">
+              <i class="fa-solid fa-arrow-up mr-1"></i> Pengeluaran
+            </button>
+          </div>
+          <div class="flex gap-2">
+            <input type="number" id="tx-amount" placeholder="Jumlah (Rp)" min="1" step="any" required
+              class="nb-input flex-1 rounded-lg py-2.5 px-3 text-sm font-medium">
+            <input type="date" id="tx-date" required
+              class="nb-input border w-[150px] rounded-lg py-2.5 px-3 text-sm font-medium">
+          </div>
+          <input type="text" id="tx-description" placeholder="Deskripsi" required maxlength="200"
+            class="nb-input w-full rounded-lg py-2.5 px-3 text-sm font-medium">
+          <div class="flex gap-2">
+            <select id="tx-category"
+              class="nb-input flex-1 rounded-lg py-2.5 px-3 text-sm font-medium bg-white">
+            </select>
+            <button type="submit"
+              class="nb-btn bg-brand-lime text-black w-12 h-11 rounded-lg font-extrabold text-xl shrink-0 flex items-center justify-center">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
