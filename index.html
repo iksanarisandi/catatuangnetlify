@@ -36,13 +36,13 @@
 </head>
 <body class="nb-bg min-h-screen flex justify-center items-center p-0 md:p-6 font-sans">
 
-  <div class="w-full h-[100dvh] md:h-auto md:max-h-[90vh] md:max-w-md bg-white border-3 border-black md:rounded-2xl md:shadow-[8px_8px_0_0_#000] overflow-hidden relative">
+  <div class="w-full h-[100dvh] md:h-auto md:max-h-[90vh] md:max-w-md bg-zinc-900 text-white border-3 border-black md:rounded-2xl md:shadow-[8px_8px_0_0_#000] overflow-hidden relative">
 
     <!-- LOGIN -->
     <div id="view-login" class="view active flex-col h-full">
       <div class="bg-brand-yellow border-b-3 border-black pt-16 pb-10 px-6 text-black shrink-0">
         <div class="flex items-center gap-3 mb-2">
-          <div class="bg-white border-3 border-black p-3 rounded-xl nb-shadow">
+          <div class="bg-zinc-900 border-3 border-black p-3 rounded-xl nb-shadow text-white">
             <i class="fa-solid fa-wallet text-2xl"></i>
           </div>
           <h1 class="text-3xl font-extrabold tracking-tight uppercase">CatatUang</h1>
@@ -51,15 +51,15 @@
       </div>
 
       <div class="flex-1 p-6 flex flex-col justify-center">
-        <h2 class="text-2xl font-extrabold text-black mb-6 uppercase">Masuk</h2>
+        <h2 class="text-2xl font-extrabold text-white mb-6 uppercase">Masuk</h2>
         <form id="login-form" class="space-y-4">
           <div>
-            <label for="login-email" class="block text-sm font-bold text-black mb-1 uppercase">Email</label>
+            <label for="login-email" class="block text-sm font-bold text-zinc-300 mb-1 uppercase">Email</label>
             <input type="email" id="login-email" required autocomplete="email"
               class="nb-input w-full rounded-lg py-3 px-4 font-medium">
           </div>
           <div>
-            <label for="login-password" class="block text-sm font-bold text-black mb-1 uppercase">Password</label>
+            <label for="login-password" class="block text-sm font-bold text-zinc-300 mb-1 uppercase">Password</label>
             <input type="password" id="login-password" required autocomplete="current-password"
               class="nb-input w-full rounded-lg py-3 px-4 font-medium">
           </div>
@@ -69,9 +69,9 @@
             Masuk
           </button>
         </form>
-        <p class="text-center text-sm text-black font-medium mt-6">
+        <p class="text-center text-sm text-zinc-300 font-medium mt-6">
           Belum punya akun?
-          <a href="#" id="go-register" class="font-extrabold underline decoration-2 underline-offset-2">Daftar</a>
+          <a href="#" id="go-register" class="font-extrabold underline decoration-2 underline-offset-2 text-white">Daftar</a>
         </p>
       </div>
     </div>
@@ -80,7 +80,7 @@
     <div id="view-register" class="view flex-col h-full">
       <div class="bg-brand-pink border-b-3 border-black pt-16 pb-10 px-6 text-black shrink-0">
         <div class="flex items-center gap-3 mb-2">
-          <div class="bg-white border-3 border-black p-3 rounded-xl nb-shadow">
+          <div class="bg-zinc-900 border-3 border-black p-3 rounded-xl nb-shadow text-white">
             <i class="fa-solid fa-user-plus text-2xl"></i>
           </div>
           <h1 class="text-3xl font-extrabold tracking-tight uppercase">Daftar</h1>
@@ -91,15 +91,15 @@
       <div class="flex-1 p-6 flex flex-col justify-center">
         <form id="register-form" class="space-y-4">
           <div>
-            <label for="register-email" class="block text-sm font-bold text-black mb-1 uppercase">Email</label>
+            <label for="register-email" class="block text-sm font-bold text-zinc-300 mb-1 uppercase">Email</label>
             <input type="email" id="register-email" required autocomplete="email"
               class="nb-input w-full rounded-lg py-3 px-4 font-medium">
           </div>
           <div>
-            <label for="register-password" class="block text-sm font-bold text-black mb-1 uppercase">Password</label>
+            <label for="register-password" class="block text-sm font-bold text-zinc-300 mb-1 uppercase">Password</label>
             <input type="password" id="register-password" required minlength="6" autocomplete="new-password"
               class="nb-input w-full rounded-lg py-3 px-4 font-medium">
-            <p class="text-xs text-black/70 mt-1 font-medium">Minimal 6 karakter</p>
+            <p class="text-xs text-zinc-400 mt-1 font-medium">Minimal 6 karakter</p>
           </div>
           <p id="register-error" class="hidden text-sm text-black font-semibold bg-brand-pink border-3 border-black rounded-lg px-3 py-2 nb-shadow-sm"></p>
           <button type="submit"
@@ -107,30 +107,30 @@
             Daftar
           </button>
         </form>
-        <p class="text-center text-sm text-black font-medium mt-6">
+        <p class="text-center text-sm text-zinc-300 font-medium mt-6">
           Sudah punya akun?
-          <a href="#" id="go-login" class="font-extrabold underline decoration-2 underline-offset-2">Masuk</a>
+          <a href="#" id="go-login" class="font-extrabold underline decoration-2 underline-offset-2 text-white">Masuk</a>
         </p>
       </div>
     </div>
 
     <!-- DASHBOARD -->
     <div id="view-dashboard" class="view flex-col h-full">
-      <div class="bg-brand-yellow border-b-3 border-black pt-12 pb-6 px-6 text-black shrink-0">
+      <div class="bg-zinc-900 border-b-3 border-black pt-12 pb-6 px-6 text-white shrink-0">
         <div class="flex justify-between items-start mb-4">
           <div>
             <h1 class="text-2xl font-extrabold tracking-tight uppercase">CatatUang</h1>
-            <p class="text-sm font-medium mt-0.5">Ringkasan keuangan Anda</p>
+            <p class="text-sm text-zinc-400 font-medium mt-0.5">Ringkasan keuangan Anda</p>
           </div>
           <button id="btn-logout" type="button"
-            class="nb-btn bg-white text-black px-3 py-2 rounded-lg text-sm font-extrabold uppercase">
+            class="nb-btn bg-zinc-800 text-zinc-100 hover:bg-zinc-700 px-3 py-2 rounded-lg text-sm font-extrabold uppercase">
             <i class="fa-solid fa-right-from-bracket mr-1"></i> Keluar
           </button>
         </div>
 
-        <div class="bg-white border-3 border-black nb-shadow rounded-xl p-4 mb-3">
-          <p class="text-black/70 text-sm font-bold uppercase">Saldo Bulan Ini</p>
-          <p id="summary-balance" class="text-3xl font-extrabold mt-1">Rp0</p>
+        <div class="bg-zinc-800 border-3 border-black nb-shadow rounded-xl p-4 mb-3 text-white">
+          <p class="text-zinc-400 text-sm font-bold uppercase">Saldo Bulan Ini</p>
+          <p id="summary-balance" class="text-3xl font-extrabold text-white mt-1">Rp0</p>
         </div>
 
         <div class="grid grid-cols-2 gap-3">
@@ -146,37 +146,37 @@
 
         <div class="flex items-center justify-between mt-4">
           <button id="btn-prev-month" type="button"
-            class="nb-btn bg-white w-9 h-9 flex items-center justify-center rounded-lg" aria-label="Bulan sebelumnya">
+            class="nb-btn bg-zinc-800 text-zinc-100 hover:bg-zinc-700 w-9 h-9 flex items-center justify-center rounded-lg" aria-label="Bulan sebelumnya">
             <i class="fa-solid fa-chevron-left"></i>
           </button>
-          <p id="month-label" class="font-extrabold text-sm uppercase"></p>
+          <p id="month-label" class="font-extrabold text-sm uppercase text-white"></p>
           <button id="btn-next-month" type="button"
-            class="nb-btn bg-white w-9 h-9 flex items-center justify-center rounded-lg" aria-label="Bulan berikutnya">
+            class="nb-btn bg-zinc-800 text-zinc-100 hover:bg-zinc-700 w-9 h-9 flex items-center justify-center rounded-lg" aria-label="Bulan berikutnya">
             <i class="fa-solid fa-chevron-right"></i>
           </button>
         </div>
       </div>
 
-      <div class="flex-1 overflow-y-auto p-4 bg-brand-cream no-scrollbar relative pb-56">
-        <div id="empty-state" class="flex flex-col items-center justify-center py-12">
-          <div class="bg-brand-cyan w-20 h-20 rounded-xl flex items-center justify-center mb-4 border-3 border-black nb-shadow">
-            <i class="fa-solid fa-receipt text-3xl text-black"></i>
+      <div class="flex-1 overflow-y-auto p-4 bg-zinc-950 no-scrollbar relative pb-56">
+          <div id="empty-state" class="flex flex-col items-center justify-center py-12">
+            <div class="bg-brand-cyan w-20 h-20 rounded-xl flex items-center justify-center mb-4 border-3 border-black nb-shadow">
+              <i class="fa-solid fa-receipt text-3xl text-black"></i>
+            </div>
+            <h3 class="text-lg font-extrabold text-white uppercase">Belum ada transaksi</h3>
+            <p class="text-zinc-400 text-sm mt-1 text-center px-6 font-medium">Tambahkan pemasukan atau pengeluaran di bawah</p>
           </div>
-          <h3 class="text-lg font-extrabold text-black uppercase">Belum ada transaksi</h3>
-          <p class="text-black/70 text-sm mt-1 text-center px-6 font-medium">Tambahkan pemasukan atau pengeluaran di bawah</p>
+          <div id="transaction-list"></div>
         </div>
-        <div id="transaction-list"></div>
-      </div>
 
-      <div class="absolute bottom-0 left-0 right-0 p-4 bg-white border-t-3 border-black pt-4">
+        <div class="absolute bottom-0 left-0 right-0 p-4 bg-zinc-900 border-t-3 border-black pt-4">
         <form id="tx-form" class="space-y-3">
           <div class="flex gap-2">
             <button type="button" id="btn-income"
-              class="type-btn flex-1 py-2 rounded-lg text-sm font-extrabold text-black uppercase">
+              class="type-btn flex-1 py-2 rounded-lg text-sm font-extrabold text-zinc-100 uppercase">
               <i class="fa-solid fa-arrow-down mr-1"></i> Pemasukan
             </button>
             <button type="button" id="btn-expense"
-              class="type-btn flex-1 py-2 rounded-lg text-sm font-extrabold text-black uppercase active-expense">
+              class="type-btn flex-1 py-2 rounded-lg text-sm font-extrabold text-zinc-100 uppercase active-expense">
               <i class="fa-solid fa-arrow-up mr-1"></i> Pengeluaran
             </button>
           </div>
@@ -190,7 +190,7 @@
             class="nb-input w-full rounded-lg py-2.5 px-3 text-sm font-medium">
           <div class="flex gap-2">
             <select id="tx-category"
-              class="nb-input flex-1 rounded-lg py-2.5 px-3 text-sm font-medium bg-white">
+              class="nb-input flex-1 rounded-lg py-2.5 px-3 text-sm font-medium bg-zinc-800 text-white">
             </select>
             <button type="submit"
               class="nb-btn bg-brand-lime text-black w-12 h-11 rounded-lg font-extrabold text-xl shrink-0 flex items-center justify-center">
@@ -202,19 +202,19 @@
     </div>
 
     <!-- CUSTOM CONFIRMATION POPUP -->
-    <div id="delete-modal" class="hidden absolute inset-0 bg-black/50 z-50 flex items-center justify-center p-6 backdrop-blur-sm transition-opacity duration-200 opacity-0">
-      <div class="bg-white border-3 border-black rounded-xl nb-shadow p-6 w-full max-w-[300px] transform scale-95 transition-all duration-200" id="delete-modal-content">
+    <div id="delete-modal" class="hidden absolute inset-0 bg-black/70 z-50 flex items-center justify-center p-6 backdrop-blur-sm transition-opacity duration-200 opacity-0">
+      <div class="bg-zinc-900 border-3 border-black rounded-xl nb-shadow p-6 w-full max-w-[300px] transform scale-95 transition-all duration-200" id="delete-modal-content">
         <div class="flex items-center gap-3 mb-3">
           <div class="bg-brand-pink border-3 border-black p-2.5 rounded-xl nb-shadow-sm flex items-center justify-center shrink-0">
             <i class="fa-solid fa-trash-can text-lg text-black"></i>
           </div>
-          <h3 class="text-lg font-extrabold text-black uppercase tracking-tight">Hapus Transaksi?</h3>
+          <h3 class="text-lg font-extrabold text-white uppercase tracking-tight">Hapus Transaksi?</h3>
         </div>
-        <p class="text-sm font-medium text-black/80 mb-5 leading-relaxed">
+        <p class="text-sm font-medium text-zinc-300 mb-5 leading-relaxed">
           Apakah Anda yakin ingin menghapus transaksi ini? Tindakan ini tidak dapat dibatalkan.
         </p>
         <div class="flex gap-3">
-          <button type="button" id="delete-modal-cancel" class="nb-btn flex-1 bg-white text-black font-extrabold py-2.5 rounded-lg text-sm uppercase">
+          <button type="button" id="delete-modal-cancel" class="nb-btn flex-1 bg-zinc-800 text-zinc-100 hover:bg-zinc-700 font-extrabold py-2.5 rounded-lg text-sm uppercase">
             Batal
           </button>
           <button type="button" id="delete-modal-confirm" class="nb-btn flex-1 bg-brand-pink text-black font-extrabold py-2.5 rounded-lg text-sm uppercase">

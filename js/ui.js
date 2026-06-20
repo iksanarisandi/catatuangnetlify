@@ -74,7 +74,7 @@ export function renderTransactionList(transactions, onDelete) {
 
   for (const date of Object.keys(grouped).sort((a, b) => b.localeCompare(a))) {
     const dateHeader = document.createElement('p');
-    dateHeader.className = 'text-xs font-extrabold text-black/70 uppercase tracking-wide mt-4 mb-2 first:mt-0';
+    dateHeader.className = 'text-xs font-extrabold text-zinc-400 uppercase tracking-wide mt-4 mb-2 first:mt-0';
     dateHeader.textContent = formatDateId(date);
     list.appendChild(dateHeader);
 
@@ -82,7 +82,7 @@ export function renderTransactionList(transactions, onDelete) {
       const isIncome = t.type === 'income';
       const div = document.createElement('div');
       div.className =
-        'group bg-white p-4 rounded-xl nb-shadow nb-border flex items-center justify-between gap-3 task-enter';
+        'group bg-zinc-800 text-white p-4 rounded-xl nb-shadow nb-border flex items-center justify-between gap-3 task-enter';
       div.id = `tx-${t.id}`;
 
       div.innerHTML = `
@@ -91,17 +91,17 @@ export function renderTransactionList(transactions, onDelete) {
             <span class="text-xs font-extrabold px-2 py-0.5 rounded border-3 border-black uppercase ${
               isIncome ? 'bg-brand-lime text-black' : 'bg-brand-pink text-black'
             }">${isIncome ? 'Pemasukan' : 'Pengeluaran'}</span>
-            <span class="text-xs font-semibold text-black/70">${t.category}</span>
+            <span class="text-xs font-semibold text-zinc-400">${t.category}</span>
           </div>
-          <p class="font-bold text-black truncate">${escapeHtml(t.description)}</p>
-          <p class="text-lg font-extrabold text-black mt-0.5">
+          <p class="font-bold text-zinc-100 truncate">${escapeHtml(t.description)}</p>
+          <p class="text-lg font-extrabold text-white mt-0.5">
             ${isIncome ? '+' : '-'}${formatRupiah(Number(t.amount))}
           </p>
         </div>
         <button
           type="button"
           data-id="${t.id}"
-          class="delete-btn bg-white border-3 border-black nb-shadow-sm text-black w-9 h-9 rounded-lg flex items-center justify-center shrink-0 hover:bg-brand-pink transition-colors"
+          class="delete-btn bg-zinc-800 border-3 border-black nb-shadow-sm text-white w-9 h-9 rounded-lg flex items-center justify-center shrink-0 hover:bg-brand-pink hover:text-black transition-colors"
           aria-label="Hapus transaksi"
         >
           <i class="fa-regular fa-trash-can"></i>
