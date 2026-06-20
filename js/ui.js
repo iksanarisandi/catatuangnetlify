@@ -125,3 +125,65 @@ export function animateRemove(element, callback) {
   element.classList.add('task-leave');
   setTimeout(callback, 300);
 }
+
+export function showConfirmDeleteModal() {
+  return new Promise((resolve) => {
+    const modal = document.getElementById('delete-modal');
+    const content = document.getElementById('delete-modal-content');
+    const btnCancel = document.getElementById('delete-modal-cancel');
+    const btnConfirm = document.getElementById('delete-modal-confirm');
+
+    if (!modal || !content || !btnCancel || !btnConfirm) {
+      resolve(confirm('Hapus transaksi ini?'));
+      return;
+    }
+
+    modal.classList.remove('hidden');
+    
+    // Trigger reflow to let the browser know the element is now visible
+    // and apply transition styles
+    modal.offsetHeight;
+
+    modal.classList.remove('opacity-0');
+    modal.classList.add('opacity-100');
+    content.classList.remove('scale-95');
+    content.classList.add('scale-100');
+
+    const cleanUp = () => {
+      modal.classList.remove('opacity-100');
+      modal.classList.add('opacity-0');
+      content.classList.remove('scale-100');
+      content.classList.add('scale-95');
+
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 200);
+
+      btnCancel.removeEventListener('click', onCancel);
+      btnConfirm.removeEventListener('click', onConfirm);
+      modal.removeEventListener('click', onOutsideClick);
+    };
+
+    function onCancel() {
+      cleanUp();
+      resolve(false);
+    }
+
+    function onConfirm() {
+      cleanUp();
+      resolve(true);
+    }
+
+    function onOutsideClick(e) {
+      if (e.target === modal) {
+        cleanUp();
+        resolve(false);
+      }
+    }
+
+    btnCancel.addEventListener('click', onCancel);
+    btnConfirm.addEventListener('click', onConfirm);
+    modal.addEventListener('click', onOutsideClick);
+  });
+}
+

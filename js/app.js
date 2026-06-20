@@ -20,6 +20,7 @@ import {
   renderMonthLabel,
   renderTransactionList,
   animateRemove,
+  showConfirmDeleteModal,
 } from './ui.js';
 
 let currentUser = null;
@@ -61,7 +62,8 @@ async function loadDashboard() {
 }
 
 async function handleDelete(id, element) {
-  if (!confirm('Hapus transaksi ini?')) return;
+  const confirmed = await showConfirmDeleteModal();
+  if (!confirmed) return;
 
   try {
     await deleteTransaction(id);

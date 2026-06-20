@@ -201,6 +201,29 @@
       </div>
     </div>
 
+    <!-- CUSTOM CONFIRMATION POPUP -->
+    <div id="delete-modal" class="hidden absolute inset-0 bg-black/50 z-50 flex items-center justify-center p-6 backdrop-blur-sm transition-opacity duration-200 opacity-0">
+      <div class="bg-white border-3 border-black rounded-xl nb-shadow p-6 w-full max-w-[300px] transform scale-95 transition-all duration-200" id="delete-modal-content">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="bg-brand-pink border-3 border-black p-2.5 rounded-xl nb-shadow-sm flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-trash-can text-lg text-black"></i>
+          </div>
+          <h3 class="text-lg font-extrabold text-black uppercase tracking-tight">Hapus Transaksi?</h3>
+        </div>
+        <p class="text-sm font-medium text-black/80 mb-5 leading-relaxed">
+          Apakah Anda yakin ingin menghapus transaksi ini? Tindakan ini tidak dapat dibatalkan.
+        </p>
+        <div class="flex gap-3">
+          <button type="button" id="delete-modal-cancel" class="nb-btn flex-1 bg-white text-black font-extrabold py-2.5 rounded-lg text-sm uppercase">
+            Batal
+          </button>
+          <button type="button" id="delete-modal-confirm" class="nb-btn flex-1 bg-brand-pink text-black font-extrabold py-2.5 rounded-lg text-sm uppercase">
+            Hapus
+          </button>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <script type="module" src="js/app.js"></script>
